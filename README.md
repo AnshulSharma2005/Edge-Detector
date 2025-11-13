@@ -98,7 +98,7 @@ https://github.com/AnshulSharma2005/Edge-Detector/blob/main/docs/output.gif.mp4
 
 ---
 
-📸 **Description:**
+ **Description:**
 The app captures real-time frames using the device camera and applies **OpenCV’s Canny Edge Detection** to highlight object boundaries dynamically.  
 The above video demonstrates live edge extraction from the camera feed — showing detection accuracy and performance.
 
