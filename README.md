@@ -92,7 +92,7 @@ Click **Run** ▶️ in Android Studio.
 
 ---
 
-### 🎥 Real-time Detection Preview
+### Real-time Detection Preview
 
 https://github.com/AnshulSharma2005/Edge-Detector/blob/main/docs/output.gif.mp4
 
