@@ -1,0 +1,86 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.edgedetector"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="24"
+9        android:targetSdkVersion="33" />
+10
+11    <uses-permission android:name="android.permission.CAMERA" />
+11-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:5:5-65
+11-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:5:22-62
+12
+13    <permission
+13-->[androidx.core:core:1.10.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\f6e7af55cd8ec5b9ea566be7d9b65e73\transformed\core-1.10.1\AndroidManifest.xml:22:5-24:47
+14        android:name="com.example.edgedetector.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+14-->[androidx.core:core:1.10.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\f6e7af55cd8ec5b9ea566be7d9b65e73\transformed\core-1.10.1\AndroidManifest.xml:23:9-81
+15        android:protectionLevel="signature" />
+15-->[androidx.core:core:1.10.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\f6e7af55cd8ec5b9ea566be7d9b65e73\transformed\core-1.10.1\AndroidManifest.xml:24:9-44
+16
+17    <uses-permission android:name="com.example.edgedetector.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+17-->[androidx.core:core:1.10.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\f6e7af55cd8ec5b9ea566be7d9b65e73\transformed\core-1.10.1\AndroidManifest.xml:26:5-97
+17-->[androidx.core:core:1.10.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\f6e7af55cd8ec5b9ea566be7d9b65e73\transformed\core-1.10.1\AndroidManifest.xml:26:22-94
+18
+19    <application
+19-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:7:5-26:19
+20        android:allowBackup="true"
+20-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:8:9-35
+21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+21-->[androidx.core:core:1.10.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\f6e7af55cd8ec5b9ea566be7d9b65e73\transformed\core-1.10.1\AndroidManifest.xml:28:18-86
+22        android:debuggable="true"
+23        android:extractNativeLibs="false"
+24        android:icon="@android:drawable/sym_def_app_icon"
+24-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:10:9-58
+25        android:label="Edge Detector"
+25-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:9:9-38
+26        android:supportsRtl="true"
+26-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:11:9-35
+27        android:testOnly="true"
+28        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+28-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:12:9-65
+29        <activity
+29-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:14:9-24:20
+30            android:name="com.example.edgedetector.MainActivity"
+30-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:15:13-41
+31            android:exported="true"
+31-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:16:13-36
+32            android:screenOrientation="portrait" >
+32-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:17:13-49
+33            <intent-filter>
+33-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:19:13-22:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:20:17-69
+34-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:20:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:21:17-77
+36-->D:\projects\Edge-Detector\app\src\main\AndroidManifest.xml:21:27-74
+37            </intent-filter>
+38        </activity>
+39
+40        <provider
+40-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+41            android:name="androidx.startup.InitializationProvider"
+41-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+42            android:authorities="com.example.edgedetector.androidx-startup"
+42-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+43            android:exported="false" >
+43-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+44            <meta-data
+44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+45                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+45-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+46                android:value="androidx.startup" />
+46-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\723399c486ee6ef294aba8a5b316bb25\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+47            <meta-data
+47-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\7c7c46c7e4a9782851a71feafb0067f0\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+48                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+48-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\7c7c46c7e4a9782851a71feafb0067f0\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+49                android:value="androidx.startup" />
+49-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\ANSHUL SHARMA\.gradle\caches\9.0-milestone-1\transforms\7c7c46c7e4a9782851a71feafb0067f0\transformed\jetified-lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+50        </provider>
+51    </application>
+52
+53</manifest>

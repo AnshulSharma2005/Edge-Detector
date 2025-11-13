@@ -1,0 +1,7 @@
+[
+{
+  "directory": "D:/projects/Edge-Detector/app/.cxx/Debug/5e3s3j4n/arm64-v8a",
+  "command": "C:\\Users\\ANSHUL~1\\AppData\\Local\\Android\\Sdk\\ndk\\251~1.893\\TOOLCH~1\\llvm\\prebuilt\\WINDOW~1\\bin\\CLANG_~1.EXE --target=aarch64-none-linux-android24 --sysroot=\"C:/Users/ANSHUL SHARMA/AppData/Local/Android/Sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/windows-x86_64/sysroot\" -Dnative_lib_EXPORTS -ID:/projects/Edge-Detector/app/src/main/cpp/include -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -std=c++17 -O3 -fno-limit-debug-info  -fPIC -o CMakeFiles\\native-lib.dir\\native-lib.cpp.o -c D:\\projects\\Edge-Detector\\app\\src\\main\\cpp\\native-lib.cpp",
+  "file": "D:\\projects\\Edge-Detector\\app\\src\\main\\cpp\\native-lib.cpp"
+}
+]

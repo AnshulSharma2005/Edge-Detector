@@ -1,0 +1,8 @@
+R_DEF: Internal format may change without notice
+local
+id btnToggle
+id glView
+id textureView
+id tvFps
+layout activity_main
+string app_name

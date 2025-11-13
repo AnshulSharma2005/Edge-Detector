@@ -1,0 +1,3 @@
+D:/projects/Edge-Detector/app/.cxx/Debug/5e3s3j4n/arm64-v8a/CMakeFiles/native-lib.dir
+D:/projects/Edge-Detector/app/.cxx/Debug/5e3s3j4n/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/projects/Edge-Detector/app/.cxx/Debug/5e3s3j4n/arm64-v8a/CMakeFiles/rebuild_cache.dir
