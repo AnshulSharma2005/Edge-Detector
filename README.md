@@ -82,13 +82,13 @@ Click **Run** ▶️ in Android Studio.
 
 ---
 
-## 🧪 Sample Output
+##  Sample Output
 
-### 🎯 Input vs Edge Detection Result
+###  Input vs Edge Detection Result
 
 | Original Image | Edge Detected Output |
 |----------------|----------------------|
-| <img src="docs/input.png" width="250"> | <img src="docs/output.png" width="250"> |
+| <img src="docs/originalframe.png" width="250"> | <img src="docs/processedframe.png" width="250"> |
 
 ---
 
