@@ -82,8 +82,26 @@ Click **Run** ▶️ in Android Studio.
 
 ---
 
-##  Sample Output
-*(You can include a screenshot or GIF of your app output here later.)*
+## 🧪 Sample Output
+
+### 🎯 Input vs Edge Detection Result
+
+| Original Image | Edge Detected Output |
+|----------------|----------------------|
+| <img src="docs/input.png" width="250"> | <img src="docs/output.png" width="250"> |
+
+---
+
+### 🎥 Real-time Detection Preview
+
+https://github.com/AnshulSharma2005/Edge-Detector/blob/main/docs/output.gif.mp4
+
+---
+
+📸 **Description:**
+The app captures real-time frames using the device camera and applies **OpenCV’s Canny Edge Detection** to highlight object boundaries dynamically.  
+The above video demonstrates live edge extraction from the camera feed — showing detection accuracy and performance.
+
 
 ---
 
