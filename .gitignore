@@ -1,17 +1,9 @@
-# Gradle and build files
-.gradle/
-build/
-
-# IntelliJ / Android Studio files
-.idea/
 *.iml
-
-# Local environment
-local.properties
-
-# OS files
+.gradle
+/local.properties
+/.idea
+/.cxx
+/build
+/cmake-build-debug
+/cmake-build-release
 .DS_Store
-Thumbs.db
-
-# Log files
-*.log

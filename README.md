@@ -1,17 +1,33 @@
-#  Edge Detector
+#  Edge Detector – Real-Time Android Edge Detection App
+### Powered by Kotlin, C++, OpenCV, Camera2 API & GLSurfaceView
 
-A lightweight Android app that performs real-time **edge detection** using **OpenCV**.  
-It integrates **Kotlin** for UI logic and **C++ (JNI)** for high-performance image processing.
+This Android application performs **real-time edge detection** directly from the device camera.
+Built using **native OpenCV C++**, **NDK**, **Camera2 API**, and **OpenGL ES rendering**, the app provides smooth and fast edge detection on modern smartphones.
 
 ---
 
-##  Features
+## Features
+✔️ Real-time camera preview  
+✔️ OpenCV C++ edge detection  
+✔️ 30–60 FPS processing (device dependent)  
+✔️ Toggle between original & edge view  
+✔️ Uses Camera2 API for high-quality frames  
+✔️ Optimized YUV → RGBA conversion  
+✔️ Supports **arm64-v8a** and **armeabi-v7a** devices  
+✔️ Clean & minimal UI  
 
--  Real-time edge detection using OpenCV  
--  Native library integration with JNI (C++)  
--  Clean modular structure (Kotlin + C++)  
--  Simple and intuitive UI  
--  Gradle-based build configuration  
+---
+
+##  Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Language | **Kotlin**, **C++** |
+| Native Image Processing | **OpenCV 4.x (`libopencv_java4.so`)** |
+| Android Framework | **Camera2 API**, **GLSurfaceView**, **TextureView** |
+| Rendering | **OpenGL ES 2.0** |
+| Build Tools | **NDK 26+**, **CMake**, **Gradle** |
+| Supported Architectures | ARM64, ARMv7 |
 
 ---
 
@@ -19,110 +35,132 @@ It integrates **Kotlin** for UI logic and **C++ (JNI)** for high-performance ima
 
 ```
 Edge-Detector/
-│
-├── app/                         # Main Android app module
+│── app/
 │   ├── src/
-│   │   └── main/
-│   │       ├── java/com/example/edge_detector/
-│   │       ├── cpp/
-│   │       └── res/
-│   └── build.gradle
-│
-├── jniLibs/                     # Precompiled OpenCV native libraries
-├── docs/                        # Documentation and sample images
-├── gradle/                      # Gradle build configuration
-├── build.gradle                 # Root build configuration
-├── settings.gradle              # Gradle settings
-└── README.md                    # Project documentation
+│   │   ├── main/
+│   │   │   ├── java/com/example/edgedetector/
+│   │   │   ├── cpp/       # Native C++ edge detection
+│   │   │   ├── jniLibs/   # Native OpenCV + libc++_shared.so
+│   │   │   ├── res/
+│   │   │   └── AndroidManifest.xml
+│   ├── build.gradle
+│── README.md
+│── LICENSE
+│── .gitignore
 ```
 
 ---
 
-##  Tech Stack
+##  How to Build & Run
 
-| Technology | Purpose |
-|-------------|----------|
-| **Kotlin** | Android app logic and UI |
-| **OpenCV** | Image processing and edge detection |
-| **JNI / C++** | Native library integration |
-| **Gradle** | Build and dependency management |
+### **1. Requirements**
+- Android Studio (Hedgehog/Ladybug recommended)  
+- NDK 26+  
+- CMake 3.22+  
+- Android SDK 33  
+- Physical Android device (Camera2 required)
 
 ---
 
-##  Setup Instructions
-
-### 1. Clone the Repository
-```bash
+### **2. Clone the Repo**
+```
 git clone https://github.com/AnshulSharma2005/Edge-Detector.git
 cd Edge-Detector
 ```
 
-### 2. Open in Android Studio
-Open **Android Studio** → **Open an existing project** → Select **Edge-Detector**
+---
 
-Wait for **Gradle sync** to complete.
+### **3. Open in Android Studio**
+Open the project and allow Android Studio to download required components.
 
 ---
 
-### 3. Add OpenCV SDK (if not included)
+### **4. Required Native Libraries**
+Inside:
 
-Place the **OpenCV SDK** in your local directory if missing.  
-Update `local.properties` with your SDK path if necessary:
+```
+app/src/main/jniLibs/
+```
 
-```bash
-sdk.dir=C:\Users\Anshul\AppData\Local\Android\Sdk
+These files **must exist**:
+
+```
+arm64-v8a/
+    libopencv_java4.so
+    libc++_shared.so
+
+armeabi-v7a/
+    libopencv_java4.so
+    libc++_shared.so
+```
+
+If missing, the app will crash with:
+
+```
+UnsatisfiedLinkError: libc++_shared.so not found
 ```
 
 ---
 
-### 4. Build and Run
-
-Connect your Android device or use an emulator.  
-Click **Run** ▶️ in Android Studio.
-
----
-
-##  Sample Output
-
-###  Input vs Edge Detection Result
-
-| Original Image | Edge Detected Output |
-|----------------|----------------------|
-| <img src="docs/originalframe.png" width="250"> | <img src="docs/processedframe.png" width="250"> |
+##  Running the App
+1. Connect your Android phone  
+2. Enable USB debugging  
+3. Press **Run** in Android Studio  
+4. Grant Camera permission  
+5. You will see live real-time edge output  
 
 ---
 
-### Real-time Detection Preview
+##  How Processing Works (Simplified)
 
-https://github.com/AnshulSharma2005/Edge-Detector/blob/main/docs/output.gif.mp4
+### 1. Camera2 → YUV Input  
+Camera provides YUV_420_888 frames.
 
----
+### 2. Kotlin converts to RGBA  
+Fast pixel-by-pixel conversion.
 
- **Description:**
-The app captures real-time frames using the device camera and applies **OpenCV’s Canny Edge Detection** to highlight object boundaries dynamically.  
-The above video demonstrates live edge extraction from the camera feed — showing detection accuracy and performance.
+### 3. JNI → C++ → OpenCV  
+Native code does:
 
+```cpp
+cv::Mat rgba(height, width, CV_8UC4, input);
+cv::Mat gray, edges;
+cv::cvtColor(rgba, gray, cv::COLOR_RGBA2GRAY);
+cv::Canny(gray, edges, 70, 150);
+cv::cvtColor(edges, rgba, cv::COLOR_GRAY2RGBA);
+```
 
----
-
-##  Contributing
-
-1. Fork the repository  
-2. Create a new branch:  
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit your changes:  
-   ```bash
-   git commit -m "Add feature-name"
-   ```
-4. Push to your branch and open a **Pull Request**
+### 4. GLSurfaceView renders output  
+GPU-based texture upload gives **smooth FPS**.
 
 ---
 
-##  License
-This project is licensed under the **MIT License** — feel free to use and modify it.
+##  Troubleshooting
+
+### App Crashes on Launch  
+**Reason:** Missing `libc++_shared.so`  
+**Fix:** Copy from NDK → project `jniLibs` folder.
+
+### Black Camera Screen  
+- Permission not granted  
+- Camera not supported  
+- Try lowering resolution in `CameraController`
 
 ---
 
-> Developed with by [Anshul Sharma](https://github.com/AnshulSharma2005)
+##  Improvements You Can Add
+ Edge threshold slider  
+ Multiple filters (Sobel, Laplacian, Sketch)  
+ Record processed video  
+ OpenGL shaders for GPU edge detection  
+
+---
+
+##  Author  
+**Anshul Sharma**  
+AI & Android Developer  
+
+---
+
+## License (MIT)
+Open for personal & academic use.
